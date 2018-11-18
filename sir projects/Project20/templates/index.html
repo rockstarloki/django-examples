@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form action="/displayone/" method="post">
+            {% csrf_token %}
+            Select One Language
+            <select name="lang">
+                <option>Select</option>
+                <option>C-lang</option>
+                <option>C++</option>
+                <option>Python</option>
+                <option>Java</option>
+                <option>.net</option>
+            </select>
+            <input type="submit" value="submit">
+            <h1>{{ message1 }}</h1>
+        </form>
+        <br>
+        <br>
+    <form action="/displaytwo/" method="post">
+            {% csrf_token %}
+            Select One Language
+            <select name="lang">
+                <option>Select</option>
+                <option>C-lang</option>
+                <option>C++</option>
+                <option>Python</option>
+                <option>Java</option>
+                <option>.net</option>
+            </select>
+            <input type="submit" value="submit">
+            <h1>
+                {% if message2 == "Select" %}
+                    <font face="chiller" color="red">
+                        Please Select One Option
+                    </font>
+                {% else %}
+                     <font face="Arial" color="blue">
+                        {{ message2 }}
+                    </font>
+                {% endif %}
+            </h1>
+        </form>
+
+<br>
+        <br>
+    <form action="/displaythree/" method="post">
+            {% csrf_token %}
+            Select One Language
+            <select name="lang" multiple>
+                <option>Select</option>
+                <option>C-lang</option>
+                <option>C++</option>
+                <option>Core Python</option>
+                <option>Advance Python</option>
+                <option>Django</option>
+                <option>Flask</option>
+                <option>Project</option>
+            </select>
+            <input type="submit" value="submit">
+            <h1>
+                     <font face="Arial" color="blue">
+                        {% for x in message3 %}
+                            {% if x == "Select" %}
+                                <font face="chiller" color="red">
+                                        Please Select One Option
+                                </font>
+                            {% else %}
+                                <font face="Arial" color="blue">
+                                    {{ x }}<br>
+                                </font>
+                            {% endif %}
+                         {% endfor %}
+                    </font>
+
+            </h1>
+        </form>
+</body>
+</html>

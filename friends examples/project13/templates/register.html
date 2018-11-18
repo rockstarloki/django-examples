@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div,table{
+            text-align: center;
+            align-items: center;
+
+        }
+                 input[type=text],input[type=submit], select {
+            width:75%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        </style>
+</head>
+<body>
+<div>
+    <form action="/savedetails/" method="post">
+        {% csrf_token %}
+        <table align="center">
+            <tr bgcolor="aqua" colspan="3">
+                <th>
+                    Register
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="idno" required placeholder="Idno">
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <input type="text" name="name" required placeholder="Name">
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <input type="text" name="salary" required placeholder="Salary">
+                </td>
+            </tr>
+               <tr>
+                <td>
+                    <input type="text" name="contact" required placeholder="Contact">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="username" required placeholder="Username">
+                </td>
+            </tr>
+              <tr>
+                <td>
+                    <input type="text" name="password" required placeholder="Password">
+                </td>
+            </tr>
+               <tr>
+                <td>
+                    <input type="submit" value="Register">
+                </td>
+            </tr>
+               <tr>
+                <td>
+                    <a href="/login/">Click Here to  Login </a>
+                </td>
+            </tr>
+               <tr>
+                <td>
+                    <font color="green">{{ status }}</font>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

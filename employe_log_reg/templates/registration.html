@@ -1,0 +1,59 @@
+                                                                                                                                                                                    ````````            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>registration</title>
+</head>
+<body>
+
+<form action="/registered/" method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <th width="200" height="50" bgcolor="#00ced1">
+                Registration
+            </th>
+            <tr>
+                <td align="center">
+                    <input type="number" placeholder="idno" name="idno" required>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="text" placeholder="name" name="name" required>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="number" placeholder="contact" name="contact" required>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="number" placeholder="salary" name="salary" required>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="text" placeholder="username" name="username" required>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="text" placeholder="password" name="password" required>
+                </td>
+            </tr>
+            <tr>
+                <td  align="center" height="50" width="200" bgcolor="#7fffd4">
+                    <input type="submit" value="regsiter">
+                    <a href="/login/">Login</a>
+                    <tr><td align="center">{{ mess }}</td></tr>
+
+                </td>
+            </tr>
+
+
+    </table>
+ </form>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            text-align: center;
+            align-items: center;
+        }
+        input[type=text],input[type=submit], select {
+            width:75%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        </style>
+</head>
+<body>
+<div>
+    <form action="/logincheck/" method="post">
+        {% csrf_token %}
+        <table align="center">
+            <tr colspan="3" bgcolor="aqua">
+            <th>Login</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="username" required placeholder="Username">
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <input type="text" name="password" required placeholder="password">
+                </td>
+            </tr>
+              <tr>
+                <td>
+                    <input type="submit" value="Login">
+                </td>
+            </tr>
+            <tr bgcolor="aqua">
+                <td>
+                    <a href="/register/">Click here To Register</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <font color="red">{{ status }}</font>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

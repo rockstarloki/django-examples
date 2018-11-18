@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/displayone/" method="post">
+    {% csrf_token %}
+    Please select one language
+    <select name="lang">
+        <option>select</option>
+        <option>c_lang</option>
+        <option>c++</option>
+        <option>python</option>
+        <option>java</option>
+        <option>.net</option>
+    </select>
+
+    <input type="submit" value="submit"><br>
+    <h2>{{ language }}</h2>
+</form>
+<br>
+<br>
+<br>
+<form action="/displaytwo/" method="post">
+    {% csrf_token %}
+    Please select one Language
+    <select name="lang">
+        <option>select</option>
+        <option>c_lang</option>
+        <option>c++</option>
+        <option>python</option>
+        <option>java</option>
+        <option>.net</option>
+    </select>
+    <input type="submit" value="submit"><br>
+
+
+         <font face="chiller" color="red" size="25">
+             {{ language3 }}
+
+         </font>
+      <font face="Arial" color="blue" size="25">
+          {{ language2 }}
+      </font>
+    <br>
+    <br>
+     </form>
+    <form action="/diaplaythree/" method="post">
+       {% csrf_token %}
+    Please select one Language
+        <select name="lang" multiple>
+            <option>select</option>
+            <option>c_lang</option>
+            <option>c++</option>
+            <option>python</option>
+            <option>java</option>
+            <option>.net</option>
+        </select>
+        <input type="submit" value="submit"><br>
+        {% for x in language4 %}
+            <font face="Chiller" color="#adff2f" size="25">
+            {% if x == 'select'  %}
+                please select at least one language
+            {% else %}</font>
+                <font face="Arial" color="#ff69b4" size="25">
+                {{ x }}<br>
+            {% endif %}
+            </font>
+        {% endfor %}
+    </form>
+
+
+
+</body>
+</html>

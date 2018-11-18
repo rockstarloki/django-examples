@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table align="center">
+    <tr bgcolor="aqua" >
+        <td colspan="4" align="center">
+            <font size="20" color="white">Welcome</font>
+        </td>
+    </tr>
+    <tr bgcolor="#a52a2a">
+        <td colspan="4" align="center">
+            <font size="5" color="white">{{ data.name }}</font>
+        </td>
+    </tr>
+    <tr bgcolor="#f0f8ff">
+        <td>
+            <a href="/view/?un={{ data.username }}">View Profile</a>|
+        </td>
+           <td>
+            <a href="/updateprofile/?un={{ data.username }}">Update Profile</a>|
+        </td>
+          <td>
+            <a href="/deleteprofile/?un={{ data.username }}">DeleteProfile</a>|
+        </td>
+          <td>
+            <a href="/logout/">LogOut</a>
+        </td>
+    </tr>
+</table>
+<center>
+    {% if mess == "view" %}
+        <h3>IDNO   :  {{ data.idno }}</h3>
+        <h3>NAME   :  {{ data.name }}</h3>
+        <h3>CONTACT   :  {{ data.contact }}</h3>
+        <h3>SALARY   :  {{ data.salary}}</h3>
+        <h3>USERNAME   :  {{ data.username}}</h3>
+        {% elif mess == "update" %}
+       <form action="/updatedetails/" method="post">
+        {% csrf_token %}
+        <table align="center">
+            <tr bgcolor="aqua" colspan="3">
+                <th>
+                    Update
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="idno" required placeholder="Idno" value="{{ data.idno }}" readonly>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <input type="text" name="name" required placeholder="Name" value="{{ data.name }}">
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <input type="text" name="salary" required placeholder="Salary" value="{{ data.salary }}">
+                </td>
+            </tr>
+               <tr>
+                <td>
+                    <input type="text" name="contact" required placeholder="Contact" value="{{ data.contact }}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="username" required placeholder="Username" value="{{ data.username}}" readonly>
+                </td>
+            </tr>
+
+               <tr>
+                <td>
+                    <input type="submit" value="Update">
+                </td>
+            </tr>
+
+               <tr>
+                <td>
+                    <font color="green">{{ status }}</font>
+                </td>
+            </tr>
+        </table>
+    </form>
+    {% endif %}
+    {% if dp %}
+        <table>
+            <tr>
+                <td>
+                    IDNO  :
+                </td>
+                    <td>
+                    {{ dp.idno }}
+                </td>
+            </tr>
+        <tr>
+                <td>
+                    USERNAME :
+                </td>
+                <td>
+                    {{ dp.username }}
+                </td>
+            </tr>
+
+        <tr><form action="/deleteproduct/" method="post">
+            {% csrf_token %}
+                <td>
+                   <input type="radio" name="dp" value="yes" >YES
+                    <input type="hidden" value="{{ dp.username }}" name="username">
+                </td>
+                <td>
+                    <input type="radio" name="dp" value="No"  checked>NO
+                </td>
+            </tr>
+          <tr>
+                <td colspan="2" align="center">
+                   <input type="submit"  value="Delete" >
+                </td>
+
+            </tr>
+        </form>
+        </table>
+{% endif %}
+</center>
+
+
+</body>
+</html>

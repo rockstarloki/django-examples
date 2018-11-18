@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>three</title>
+</head>
+<body>
+    <form action="/all/" method="post">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <th>
+                    <textarea type="textarea" placeholder="address" name="t3" required>
+                    </textarea>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="next" >
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+</body>
+</html>

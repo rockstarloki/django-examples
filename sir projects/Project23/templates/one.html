@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form action="/show/" method="post">
+            {% csrf_token %}
+            <table align="center">
+                <tr>
+                    <td>
+                         <input type="submit" name="Get Cookie">
+                    </td>
+                </tr>
+                <tr>
+                    <th> {{ c_name }}</th>
+                </tr>
+            </table>
+
+            </form>
+</body>
+</html>

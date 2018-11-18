@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome</title>
+</head>
+<body>
+        <table align="center">
+           <tr align="center">
+                <th colspan="4" height="100" width="800" bgcolor="aqua">Welcome </th>
+           <tr>
+           <tr align="center">
+                <th colspan="4" bgcolor="#98fb98" height="100" width="800">
+                    <font face="chiller" size="7">{{ message.name }}</font></th>
+           </tr>
+           <tr align="center">
+               <td>
+                   <a href="/viewprofile/?uname={{ message.username }}">View Profile</a>
+               </td>
+               <td >
+                   <a href="/update/?uname={{ message.username  }}">Update Profile</a>
+               </td>
+               <td >
+                   <a href="/deleteprofile/?uname={{ message.username }}">Delete profile</a>
+               </td>
+               <td >
+                   <a href="/logout/">Logout</a>
+               </td>
+           </tr>
+
+
+            {% if delete %}
+                <form action="/deleteprofile1/" method="post">
+                {% csrf_token %}
+
+                <table align="center">
+                <tr>
+                    <th>Delete</th>
+                </tr>
+                    <tr>
+                <td>
+                    {{ delete.idno }}
+                </td>
+                    </tr>
+                    <tr>
+                <td>
+                    {{ delete.name }}
+                </td>
+                    </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="rd" value="Yes"> Yes
+                    </td>
+                    <td>
+                        <input type="hidden" value="{{ delete.username }}" name="uname">
+                        <input type="radio" name="rd" value="No" checked> No
+                    </td>
+                    <tr>
+                    <td>
+                        <input type="submit" value="delete">
+                    </td>
+                </tr>
+
+                </table>
+                </form>
+                </table>
+            {% endif %}
+
+            {% if update %}
+                <form action="/updatedetails/" method="post">
+                    {% csrf_token %}
+                <table align="center">
+                    <tr>
+                        <th width="200" height="50" bgcolor="#00ced1">
+                                Update
+                        </th>
+                    <tr>
+                        <td align="center">
+                            <input type="number" placeholder="idno" name="idno"  value="{{ update.idno }}" readonly required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <input type="text" placeholder="name" name="name" value="{{ update.name }}" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  align="center">
+                            <input type="number" placeholder="contact" name="contact" value="{{ update.contact }}" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <input type="number" placeholder="salary" name="salary" value="{{ update.salary }}" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <input type="text" placeholder="username" name="username"  value="{{ update.username }}" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <input type="text" placeholder="password" name="password" value="{{ update.password }}" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  align="center" height="50" width="200" bgcolor="#7fffd4">
+                            <input type="submit" value="update">
+                        </td>
+
+                    </tr>
+                    </table>
+                    </form>
+            {% endif %}
+
+            {% if profile %}
+                <table align="center" border="2">
+                    <tr align="center"><th>Profile</th></tr>
+                    <tr>
+                    <td> IDNO : </td>
+                    <td>
+                       {{ profile.idno }}
+                    </td>
+                    </tr>
+                    <tr>
+                    <td> NAME : </td>
+                    <td>
+                       {{ profile.name }}
+                    </td>
+                        </tr>
+                    <tr>
+                    <td> CONTACT : </td>
+                    <td>
+                       {{ profile.contact }}
+                    </td></tr>
+                    <tr>
+                    <td> USERNAME : </td>
+                    <td>
+                       {{ profile.username }}
+                    </td>
+                </tr>
+                </table>
+            {% endif %}
+</body>
+</html>

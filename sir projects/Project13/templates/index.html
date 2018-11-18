@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form action="/showimages/" method="post">
+            {% csrf_token %}
+        <table align="center" border="0">
+            <tr>
+                <td>
+                    <input type="submit" value="one" name="b1">
+                </td>
+                <td>
+                    <input type="submit" value="two" name="b1">
+                </td>
+                <td>
+                    <input type="submit" value="three" name="b1">
+                </td>
+                <td>
+                    <input type="submit" value="four" name="b1">
+                </td>
+                <td>
+                    <input type="submit" value="five" name="b1">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5" align="center">
+                    <input type="text" name="b1" placeholder="Image Name" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" align="center">
+                    <input type="submit" value="Show">
+                </td>
+            </tr>
+
+        </table>
+            </form>
+</body>
+</html>

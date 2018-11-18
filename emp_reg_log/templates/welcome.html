@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome</title>
+</head>
+<body>
+        <table align="center">
+            <tr >
+                <th colspan="4" height="50" width="800" bgcolor="#00ffff"><font face="Chiller" size="7" >WELCOME </font></th>
+            </tr>
+            <tr bgcolor="#ff69b4">
+                <td height="50" align="center" width="800" colspan="4">
+                    {{ pass.name }}
+                </td>
+            </tr>
+            <tr bgcolor="#ffdab9">
+                <td>
+                    <a href="/viewprofile/?uname={{ pass.username }}" > View Profile</a>
+                </td>
+                <td> <a href="/updateprofile/?uname={{ pass.username }}" > Update Profile </a>
+                </td>
+                <td> <a href="/deleteprofile/?uname={{ pass.username }}" > Delete Profile </a>
+                </td>
+                <td><a href="/logout/"> Logout </a>
+                </td>
+            </tr>
+        </table>
+
+
+
+        {% if profile %}
+            <table align="center">
+            <tr>
+                <td>
+                    IDNO :
+                </td><td>{{ profile.idno }}</td></tr>
+                <tr>
+                <td>
+                    NAME :
+                </td><td>{{ profile.name }}</td>
+                </tr>
+                <tr>
+                <td>
+                    CONTACT :
+                </td><td>{{ profile.contact }}</td>
+                </tr>
+                <tr>
+                <td>
+                    SALARY :
+                </td><td>{{ profile.salary }}</td>
+                </tr>
+                <tr>
+                    <td>
+                    EMAIL :
+                </td><td>{{ profile.email }}</td>
+                </tr>
+                <tr>
+                    <td>
+                    USERNAME :
+                </td><td>{{ profile.username }}</td>
+                </tr>
+                <tr>
+                    <td>
+                    PASSWORD :
+                </td><td>{{ profile.password }}</td>
+            </tr>
+            </table>
+        {% endif %}
+
+        {% if update %}
+            <form action="/updateprofile1/" method="post">
+            {% csrf_token %}
+            <table align="center">
+                <tr bgcolor="#98fb98">
+                    <th > UPDATE </th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" placeholder="idno" readonly name="idno" value="{{ update.idno }}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="name"   name="name" required value="{{ update.name }}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" placeholder="contact" name="contact" value="{{ update.contact }}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" placeholder="salary" name="salary" value="{{ update.salary }}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="email" placeholder="email" name="email" value="{{ update.email }}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="username" name="username" value="{{ update.username }}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" placeholder="password" name="password" value="{{ update.password }}" required>
+                    </td>
+                </tr>
+                <tr bgcolor="#7fffd4">
+                    <td>
+                        <input type="submit" value="update">
+                    </td>
+                </tr>
+                <tr bgcolor="#ff7f50">
+                    <td>
+                        {{ message }}
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+        {% endif %}
+
+        {% if delete %}
+            <form action="/deleteprofile1/" method="post">
+            {% csrf_token %}
+
+            <table align="center" border="2">
+            <tr>
+                <th> DELETE </th>
+                <tr>
+                <td>
+                    IDNO :
+                </td>
+                <td>{{ pass.idno }}</td>
+            </tr>
+            <tr>
+                <td> NAME </td>
+                <td> {{ pass.name }}</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" value="Yes" name="rd"> Yes
+                </td>
+            </tr>
+            <td>
+                <input type="radio" value="No" name="rd">No
+            </td>
+            <tr align="center">
+                <td>
+                    <input type="hidden" value="{{ pass.username }}" name="uname">
+                    <input type="submit" value="delete">
+                </td>
+            </tr>
+
+            </table>
+            </form>
+        {% endif %}
+
+
+</body>
+</html>

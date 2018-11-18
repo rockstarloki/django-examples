@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <h1>Products</h1>
+        <form action="/payment/" method="post">
+            {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    <input type="checkbox" value="mobiles" name="p1"> Mobiles
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="tab" name="p1"> Tab's
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="Laptops" name="p1"> Laptops
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="tv" name="p1"> Tv's
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Payment" >
+                </td>
+            </tr>
+        </table>
+            <h3>{{ error }}</h3>
+            </form>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load staticfiles %}
+</head>
+<body>
+<img src="{% static 'images/background.jpg' %}">
+
+
+    <form action="/show/" method="post">
+        {% csrf_token %}
+
+        <table align="center">
+            <tr>
+                <td>
+                    <input type="checkbox" value="orange" name="cb"> Orange
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="arya-2" name="cb"> Arya-2
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="son of satyamurthy" name="cb"> S/o Satyamurhty
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="Arjun Reddy" name="cb"> Arjum Reddy
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="Express Raja" name="cb"> Express Raja
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="lie" name="cb"> Lie
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="Oye" name="cb"> Oye
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="dhruva" name="cb"> Dhruva
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="goutham nandha" name="cb"> goutham nandha
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" value="Kabali" name="cb"> Kabali
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="showimage">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% for x in items %}
+                        {{ x }} <br>
+                    {% endfor %}
+
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="/save/" method="post">
+        {% csrf_token %}
+        <table align="center" border="2">
+        <tr>
+            <th>
+                Name : {{ k1 }}
+                <input type="hidden" name="t1" value="{{ k1 }}">
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Contact No : {{ k2 }}
+                <input type="hidden" name="t2" value="{{ k2 }}">
+            </th>
+        </tr>
+        <tr align="center">
+            <td>
+                <input type="submit" value="Save">
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

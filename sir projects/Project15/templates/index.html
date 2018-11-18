@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form action="/saveproduct/" method="post">
+            {% csrf_token %}
+            <table align="center">
+                <tr>
+                    <th> Product Details </th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" name="t1" placeholder="Number" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="t2" placeholder="Name" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" name="t3" placeholder="Price" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Save">
+                    </td>
+                </tr>
+            </table>
+        </form>
+</body>
+</html>

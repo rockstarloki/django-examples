@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+    <form action="/logincheck/" method="post">
+        {% csrf_token %}
+        <table align="center">
+            <tr align="center">
+                <td>
+                    LOGIN PAGE
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="username" name="username">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" placeholder="password" name="password">
+                </td>
+            </tr>
+            <tr align="center">
+                <td>
+                    <input type="submit" value="login">
+                </td>
+            </tr>
+        </table>
+        <tr>
+            <th>
+                {{ miss }}
+            </th>
+        </tr>
+    </form>
+
+</body>
+</html>

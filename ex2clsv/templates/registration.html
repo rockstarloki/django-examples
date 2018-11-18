@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>registration</title>
+</head>
+<body>
+    <form action="/registration/" method="post">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <td align="center">
+                    Registration Page
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" placeholder="idno" name="idno" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="name" name="name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" placeholder="contact" name="contact" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="userame" name="username" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" placeholder="password" name="password" required>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="submit" value="register">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ miss }}
+                </td>
+            </tr>
+            <tr><th>
+                 <a href="/login/">
+                    Login
+                </a>
+                </th>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/display/" method="post">
+        {% csrf_token %}
+        Select Language
+        <select name="language" >
+            <option>select</option>
+            <option>C laguage</option>
+            <option>C ++ laguage</option>
+            <option>Python</option>
+            <option>Java</option>
+            <option>.Net</option>
+
+        </select>
+        <input type="submit" value="submit"><br>
+         {% if mess1 == "select" %}
+            <font color="red">{{ mess1 }}</font>
+
+        {% else %}
+             {% if mess %}
+
+             {% endif %}
+            <font color="#ff7f50" >{{ mess1 }}</font>
+        {% endif %}
+
+        <h4>{{ mess }}</h4>
+    </form>
+
+    <form action="/display/" method="post">
+        {% csrf_token %}
+        Select Language
+        <select name="language" >
+            <option>select</option>
+            <option>C laguage</option>
+            <option>C ++ laguage</option>
+            <option>Python</option>
+            <option>Java</option>
+            <option>.Net</option>
+
+        </select>
+        <input type="submit" value="submit"><br>
+        {% if messsage1 == "select" %}
+            <font color="red">{{ message1 }}</font>
+
+        {% else %}
+            <font color="#ff7f50" >{{ mess1 }}</font>
+        {% endif %}
+
+    </form>
+
+</body>
+</html>

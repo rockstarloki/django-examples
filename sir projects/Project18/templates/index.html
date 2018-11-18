@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form action="/display/" method="post">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="Core Python" name="cb"> Core Python
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="Advance Python" name="cb"> Advance Python
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="Django" name="cb"> Django
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="Project" name="cb"> Project
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        {% for x in items %}
+            {{ x }} <br>
+        {% endfor %}
+
+</body>
+</html>

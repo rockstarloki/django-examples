@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>product</title>
+</head>
+<body>
+    <form action="/product/" method="post">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <td>
+                    Select Products
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="t1"> APPLE 6s
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="t1"> SAMSUNG s10
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="t1"> NOKIA 6.1
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="t1"> REDMI NOTE 5 PRO
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="payment">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    {{ mess }}
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

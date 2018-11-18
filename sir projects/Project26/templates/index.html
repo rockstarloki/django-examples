@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form action="/open/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Open">
+            {{ message1 }}
+        </form>
+        <br>
+        <br>
+        <br>
+        <a href="/open/">
+            <h3> OPEN </h3>
+        </a>
+        <h2> {{ message2 }} </h2>
+</body>
+</html>

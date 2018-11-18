@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show</title>
+    {% load staticfiles %}
+</head>
+<body>
+            {{ name }}
+        <img src="{% static 'images/' %}{{ name}}.jpg" >
+        <audio autoplay>
+            <source src="{% static 'audio/' %}{{ name }}.mp3">
+        </audio>
+</body>
+
+</html>

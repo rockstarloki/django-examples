@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>details</title>
+</head>
+<body>
+    <form action="/details/" method="post">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <th>
+                    name : {{ name }}
+                    <input type="hidden" name="t1" value="{{ name }}">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    age : {{ age }}
+                    <input type="hidden" name="t2" value="{{ age }}">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    cno : {{ cno }}
+                    <input type="hidden" name="t3" value="{{ cno }}">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    email : {{ email }}
+                    <input type="hidden" name="t4" value="{{ eamil }}">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    password : {{ password }}
+                    <input type="hidden" name="t" value="{{ password }}">
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="save">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
